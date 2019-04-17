@@ -16,13 +16,13 @@ https://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=datef
 **O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em MapReduce. Por quê?** 
 
 Porque o Spark processa os dados em memória, diferentemente do MapReduce que grava os dados em disco. O processo de ler e gravar os 
-dados em disco é muito mais custoso em termos de processsamento. Contudo, o Spark também passa a gravar os dados em disco quando não 
+dados em disco é muito mais custoso em termos de processamento. Contudo, o Spark também passa a gravar os dados em disco quando não 
 há mais espaço na memoria.
 
 
 **Qual o objetivo do comando cache em Spark?** 
 
-O comando cache é util quando em algum momento o RDD seguirá mais de um caminho de utilização, ou seja, ele não terá um caminho único e linear. Então, se por exemplo o método count for chamado duas vezes, na primeira chamada o count será executado e o Spark criará um checkpoint, e na segunda chamada o Spark utilizará o checkpoint criado e economizará processamento. 
+O comando cache é útil quando em algum momento o RDD seguirá mais de um caminho de utilização, ou seja, ele não terá um caminho único e linear. Então, se por exemplo o método count for chamado duas vezes, na primeira chamada o count será executado e o Spark criará um checkpoint, e na segunda chamada o Spark utilizará o checkpoint criado e economizará processamento. 
 ref: https://stackoverflow.com/questions/28981359/why-do-we-need-to-call-cache-or-persist-on-a-rdd
 
 **Qual é a função do SparkContext?**
@@ -37,7 +37,7 @@ https://data-flair.training/blogs/learn-apache-spark-sparkcontext/
 
 **Explique com suas palavras o que é Resilient Distributed Datasets (RDD).** 
 
-RDDs são a principal abstração que o Spark oferece para trabalhar com dados distribuidos ou em paralelo. O desenvolvedor não precisa se preocurar com a arquitetura e lógica do processamento distribuido, pois os RDDs abstraem tudo isso. Até mesmo DataFrames e DataSets utilizam RDDs.
+RDDs são a principal abstração que o Spark oferece para trabalhar com dados distribuídos ou em paralelo. O desenvolvedor não precisa se preocupar com a arquitetura e lógica do processamento distribuído, pois os RDDs abstraem tudo isso. Até mesmo DataFrames e DataSets utilizam RDDs.
 
 ref: https://spark.apache.org/docs/latest/rdd-programming-guide.html
 
