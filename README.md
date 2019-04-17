@@ -46,9 +46,16 @@ ref: https://spark.apache.org/docs/latest/rdd-programming-guide.html
 Por conta de sua lógica de execução, o GroupByKey transfere muito mais dados pela rede.
 
 ref: https://databricks.gitbooks.io/databricks-spark-knowledge-base/content/best_practices/prefer_reducebykey_over_groupbykey.html
+
+**Explique o que o código Scala abaixo faz.**
+
 val textFile = sc.textFile("hdfs://...")
 val counts = textFile.flatMap(line => line.split("
 "))
 .map(word => (word, 1))
 .reduceByKey(_ + _)
 counts.saveAsTextFile("hdfs://...") 
+
+O código conta a quantidade de palavras no arquivo lido e depois salva o resultado em um novo arquivo.
+O flatMap, juntamente com o split, retornará um RDD no qual cada palavra é uma linha.
+O map adicionará o número 1 ao lado de cada palavra. E, por fim, o reduceByKey somará todos os números 1, o que resultará na quantidade de palavras.
