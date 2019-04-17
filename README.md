@@ -21,9 +21,19 @@ há mais espaço na memoria.
 
 
 Qual o objetivo do comando cache em Spark? 
+
 O comando cache é util quando em algum momento o RDD seguirá mais de um caminho de utilização, ou seja, ele não terá um caminho único e linear. Então, se por exemplo o método count for chamado duas vezes, na primeira chamada o count será executado e o Spark criará um checkpoint, e na segunda chamada o Spark utilizará o checkpoint criado e economizará processamento. 
 ref: https://stackoverflow.com/questions/28981359/why-do-we-need-to-call-cache-or-persist-on-a-rdd
 
+Qual é a função do SparkContext?
+
+O SparkContext é o cliente do ambiente de execução do Spark. Ele permite a sua aplicação Spark acessar o Cluster Spark com a ajuda do Resource Manager (YARN/Mesos). Só é possível criar RDDs, acessar serviços do Spark ou rodar jobs após a criação do SparkContext.
+
+Refs: 
+
+https://data-flair.training/forums/topic/what-is-sparkcontext-in-apache-spark/
+
+https://data-flair.training/blogs/learn-apache-spark-sparkcontext/
 
 
 val textFile = sc.textFile("hdfs://...")
