@@ -21,8 +21,7 @@ há mais espaço na memoria.
 
 
 Qual o objetivo do comando cache em Spark? 
-O comando cache 
-
+O comando cache é util quando em algum momento o RDD seguirá mais de um caminho de utilização, ou seja, ele não terá um caminho único e linear. Então, se por exemplo o método count for chamado duas vezes, na primeira chamada o count será executado e o Spark criará um checkpoint, e na segunda chamada o Spark utilizará o checkpoint criado e economizará processamento. 
 ref: https://stackoverflow.com/questions/28981359/why-do-we-need-to-call-cache-or-persist-on-a-rdd
 
 
