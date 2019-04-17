@@ -36,8 +36,16 @@ https://data-flair.training/forums/topic/what-is-sparkcontext-in-apache-spark/
 https://data-flair.training/blogs/learn-apache-spark-sparkcontext/
 
 **Explique com suas palavras o que é Resilient Distributed Datasets (RDD).** 
+
 RDDs são a principal abstração que o Spark oferece para trabalhar com dados distribuidos ou em paralelo. O desenvolvedor não precisa se preocurar com a arquitetura e lógica do processamento distribuido, pois os RDDs abstraem tudo isso. Até mesmo DataFrames e DataSets utilizam RDDs.
 
+ref: https://spark.apache.org/docs/latest/rdd-programming-guide.html
+
+**GroupByKey é menos eficiente que reduceByKey em grandes dataset. Por quê?**
+
+Por conta de sua lógica de execução, o GroupByKey transfere muito mais dados pela rede.
+
+ref: https://databricks.gitbooks.io/databricks-spark-knowledge-base/content/best_practices/prefer_reducebykey_over_groupbykey.html
 val textFile = sc.textFile("hdfs://...")
 val counts = textFile.flatMap(line => line.split("
 "))
